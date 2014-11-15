@@ -1,0 +1,26 @@
+body,
+button,
+input {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+}
+
+body {
+  margin: 2em;
+}
+
+p {
+  max-width: 800px;
+}
+
+/* For polyfill */
+basic-calendar-month basic-days-of-week .dayOfWeek.weekend,
+basic-calendar-month basic-calendar-day.weekend.insideMonth,
+basic-calendar-month calendar-day-moon-phase.weekend.insideMonth {
+  color: gray;
+}
+basic-calendar-month::shadow basic-days-of-week::shadow .dayOfWeek.weekend,
+basic-calendar-month /deep/ basic-calendar-day.weekend.insideMonth,
+basic-calendar-month /deep/ calendar-day-moon-phase.weekend.insideMonth {
+  color: gray;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="../components/webcomponentsjs/webcomponents.js"></script>
+<link rel="import" href="text-input-with-button.html">
+
+<script>
+document.addEventListener( "go", function( event ) {
+  alert( event.detail );
+});
+</script>
+
+<style shim-shadowdom>
+text-input-with-button::shadow > * {
+  border-color: deepskyblue;
+}
+
+text-input-with-button::shadow button {
+  background: skyblue;
+}
+</style>
+
+</head>
+
+<body>
+  <h3>My site</h3>
+  <text-input-with-button value="Components"></text-input-with-button>
+  <text-input-with-button>Search</text-input-with-button>
+</body>
+
+</html>

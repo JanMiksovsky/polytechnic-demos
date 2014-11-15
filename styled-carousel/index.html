@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="../components/webcomponentsjs/webcomponents.js"></script>
+<link rel="import" href="hero-carousel.html">
+<link rel="import" href="hero-slide.html">
+
+<style>
+body {
+  margin: 0;
+}
+
+hero-carousel {
+  width: 100%;
+}
+</style>
+
+</head>
+
+<body unresolved>
+  <hero-carousel effect="crossfade">
+    <hero-slide>
+      <img src="image2.jpg">
+      <figcaption>
+        LYTRO ILLUM:<br/>A light field<br/>camera for<br/>the creative<br/>pioneer
+      </figcaption>
+    </hero-slide>
+    <hero-slide>
+      <img src="image3.jpg">
+      <figcaption style="color: white;">
+        PIRCH:<br/>A first of its kind<br/>retail application
+      </figcaption>
+    </hero-slide>
+    <hero-slide>
+      <img src="image4.jpg">
+      <figcaption>
+        Fetch TV:<br/>Making the set top box<br/>fetching
+      </figcaption>
+    </hero-slide>
+    <hero-slide>
+      <img src="image5.png" style="height: 705px; object-fit: cover;">
+      <figcaption style="right: 0; text-align: right;">
+        10,000ft:<br/>Planning Work in<br/>the 21st Century
+      </figcaption>
+    </hero-slide>
+  </hero-carousel>
+</body>
+
+</html>

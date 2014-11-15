@@ -1,0 +1,47 @@
+<!--
+Apply custom styles to a basic-sequence-navigator.
+-->
+
+<link rel="import" href="../components/basic-carousel/basic-carousel.html">
+
+<polymer-element name="hero-carousel" extends="basic-carousel" noscript>
+<template>
+  <style>
+  :host::shadow #sequenceNavigationContainer {
+    position: relative;
+  }
+
+  :host::shadow .navigationButton {
+    position: absolute;
+    height: 100%;
+    color: white;
+    padding: 30px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 2;
+  }
+  :host::shadow .navigationButton:hover {
+    background: transparent !important;
+    opacity: 1;
+  }
+  :host::shadow .navigationButton[disabled] {
+    opacity: 0 !important;
+  }
+
+  :host::shadow .navigationButton core-icon {
+    background: rgba( 0, 0, 0, 0.6 );
+    border-radius: 30px;
+    height: 60px;
+    width: 60px;
+  }
+
+  :host::shadow #buttonPrevious {
+    left: 0;
+  }
+  :host::shadow #buttonNext {
+    right: 0;
+  }
+  </style>
+  <shadow></shadow>
+</template>
+</polymer-element>

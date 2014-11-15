@@ -1,0 +1,30 @@
+digraph BasicCalendarMonth {
+
+    rankdir = BT;
+    node[fontname=Helvetica fontsize=20.0 shape=plaintext];
+    edge[arrowsize=1 color=gray50 fontcolor=gray50 fontname=Helvetica fontsize=15.0];
+
+    "basic-element" -> "HTMLElement" [label="  is a"];
+
+    "basic-calendar-month" -> "basic-element" [label="  is a"];
+    "basic-calendar-month" -> "basic-month-and-year" [label="has a" style=dashed];
+    "basic-calendar-month" -> "basic-days-of-week" [label="has a" style=dashed];
+    "basic-calendar-month" -> "basic-calendar-month-days" [label="has a" style=dashed];
+
+    "basic-month-and-year" -> "basic-element" [label="  is a"];
+    "basic-month-and-year" -> "basic-month-name" [label="has a" style=dashed];
+
+    "basic-month-name" -> "basic-element" [label="  is a"];
+
+    "basic-days-of-week" -> "basic-element" [label="  is a"];
+
+    "basic-calendar-month-days" -> "basic-element" [label="  is a"];
+    "basic-calendar-month-days" -> "basic-calendar-day" [label="has a" style=dashed];
+    "basic-calendar-month-days" -> "basic-calendar-week" [label="has a" style=dashed];
+
+    "basic-calendar-week" -> "basic-element" [label="  is a"];
+    "basic-calendar-week" -> "basic-calendar-day" [label="has a" style=dashed];
+
+    "basic-calendar-day" -> "basic-element" [label="  is a"];
+
+}

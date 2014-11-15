@@ -1,0 +1,22 @@
+dot-carousel::shadow core-selector {
+  bottom: 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+}
+
+dot-carousel::shadow button {
+  background: rgba( 0, 0, 0, 0.6 );
+  border: 2px solid rgba( 255, 255, 255, 0.4 );
+  border-radius: 7px;
+  height: 14px;
+  width: 14px;
+}
+
+dot-carousel::shadow button.core-selected {
+  background: white;
+  border-color: white;
+}

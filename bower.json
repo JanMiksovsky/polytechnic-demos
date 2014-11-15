@@ -1,0 +1,17 @@
+{
+  "name": "demo",
+  "version": "0.0.1",
+  "dependencies": {
+    "basic-calendar-month": "basic-web-components/basic-calendar-month#master",
+    "basic-carousel": "basic-web-components/basic-carousel#master",
+    "basic-slideshow": "basic-web-components/basic-slideshow#master",
+    "core-scroll-threshold": "Polymer/core-scroll-threshold#master",
+    "globalize": "0.x",
+    "polymer": "^0.5.0"
+  },
+  "resolutions": {
+    "polymer": "^0.5.0",
+    "core-component-page": "^0.5.0",
+    "webcomponentsjs": "^0.5.0"
+  }
+}

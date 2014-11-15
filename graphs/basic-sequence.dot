@@ -1,0 +1,12 @@
+digraph BasicSequence {
+
+    rankdir = BT;
+    node[fontname=Helvetica fontsize=20.0 shape=plaintext];
+    edge[arrowsize=1 color=gray50 fontcolor=gray50 fontname=Helvetica fontsize=15.0];
+
+    "core-selection" -> "HTMLElement" [label="is a"];
+    "core-selector" -> "core-selection" [label="has a" style=dashed];
+    "basic-sequence" -> "basic-modes" -> "basic-selector" -> "core-selector" -> "HTMLElement" [label="  is a"];
+    "basic-carousel" -> "basic-sequence" [label="has a" style=dashed];
+    "basic-slideshow" -> "basic-sequence" [label="has a" style=dashed];
+}

@@ -1,0 +1,34 @@
+:host {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+#sequence {
+  display: inline-block;
+}
+
+core-selector {
+  display: -webkit-flex;
+  display: flex; /* Removes whitespace */
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+button {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #404040;
+  box-sizing: border-box;
+  height: 16px;
+  margin: 8px 2px;
+  padding: 0;
+  width: 16px;
+  transition: background 0.2s;
+}
+
+button.core-selected {
+  background: lightgray;
+}

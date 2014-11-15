@@ -1,0 +1,83 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../components/core-scroll-threshold/core-scroll-threshold.html">
+<link rel="import" href="../components/basic-calendar-week/basic-calendar-week.html">
+<link rel="import" href="../components/basic-calendar-day/basic-calendar-day.html">
+
+<polymer-element name="infinite-calendar" attributes="date dayElement">
+
+<template>
+  <style>
+  :host {
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  #scroller {
+    width: 100%;
+  }
+
+  #calendar {
+    display: table;
+    width: 100%;
+  }
+
+  basic-calendar-week::shadow .day {
+    font-size: 24px;
+    height: 4em;
+  }
+
+  basic-calendar-week::shadow .day {
+    font-size: 24px;
+    height: 4em;
+  }
+
+  basic-calendar-week::shadow .day.alternateMonth {
+    background: #e4e4e4;
+  }
+  </style>
+  <core-scroll-threshold id="scroller" lowerThreshold="800" on-lower-trigger="{{addWeek}}">
+    <div id="calendar"></div>
+  </core-scroll-threshold>
+</template>
+
+<script>
+Polymer({
+
+  addWeek: function() {
+    var week = document.createElement( "basic-calendar-week" );
+    week.date = this.date;
+    if ( this.dayElement ) {
+      week.dayElement = this.dayElement;
+    }
+    this.$.calendar.appendChild( week );
+    this.date = BasicCalendarDay.offsetDateByDays( this.date, 7 );    
+    this.$.scroller.clearLower();
+  },
+
+  date: BasicCalendarDay.today(),
+
+  dayElementChanged: function() {
+    var weeks = this.$.scroller.querySelectorAll( "basic-calendar-week" );
+    Array.prototype.forEach.call( weeks, function( week ) {
+      week.dayElement = this.dayElement;
+    }.bind( this ));
+  },
+
+  ready: function() {
+    // Force a check when the window resizes.
+    window.addEventListener( "resize", function() {
+      this.$.scroller.checkThreshold();
+    }.bind( this ));
+
+    // HACK: The scroller doesn't currently consider whether the initial set of
+    // content is long enough, so we have to put enough content into it that
+    // it's very likely to have a scroll bar right away.
+    for ( i = 0; i < 20; i++ ) {
+      this.addWeek();
+    }
+  }
+
+});
+</script>
+
+</polymer-element>

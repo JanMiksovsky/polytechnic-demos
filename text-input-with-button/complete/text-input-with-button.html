@@ -1,0 +1,48 @@
+<link rel="import" href="../components/polymer/polymer.html">
+
+<polymer-element name="text-input-with-button" attributes="value">
+<template>
+  <style>
+  :host > * {
+    border: 1px solid gray;
+    margin: 0;
+  }
+
+  input {
+    padding: 2px;
+  }
+  
+  button {
+    margin-left: -1px;
+    padding: 2px 6px;
+  }
+  </style>
+  <input type="text" value="{{value}}" on-keypress="{{keypress}}"><button id="goButton" on-click="{{go}}" disabled>
+    <content>Go</content>
+  </button>
+</template>
+
+<script>
+Polymer({
+
+  go: function() {
+    this.dispatchEvent( new CustomEvent( "go", {
+      bubbles: true,
+      detail: this.value
+    }));
+  },
+
+  keypress: function( event ) {
+    if ( event.which === 13 && this.value ) {
+      this.go();
+    }
+  },
+
+  valueChanged: function() {
+    this.$.goButton.disabled = !this.value;
+  }
+
+});
+</script>
+
+</polymer-element>

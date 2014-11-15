@@ -1,0 +1,40 @@
+<!--
+A calendar day that includes the moon phase.
+-->
+
+<link rel="import" href="../components/basic-calendar-day/basic-calendar-day.html">
+<link rel="import" href="moon-phase.html">
+
+<polymer-element name="calendar-day-moon-phase" extends="basic-calendar-day">
+
+<template>
+  <style>
+  :host {
+    display: inline-block;
+    text-align: right;
+  }
+
+  moon-phase {
+    height: 1.5em;
+    width: 1.5em;
+  }
+  </style>
+  <div id="day"></div>
+  <moon-phase date="{{date}}"></moon-phase>
+</template>
+
+<script>
+Polymer({
+
+  dateChanged: function() {
+    if ( typeof this.date === "string" ) {
+      // Parse date
+      this.date = new Date( Date.parse( this.date ));
+    }
+    this.super();
+  }
+
+});
+</script>
+
+</polymer-element>

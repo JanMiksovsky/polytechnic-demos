@@ -1,0 +1,23 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../components/basic-sequence/basic-sequence.html">
+<link rel="import" href="../components/core-selector/core-selector.html">
+
+<polymer-element name="dot-carousel" attributes="selected" noscript>
+
+<template>
+
+  <link rel="stylesheet" href="dot-carousel.css">
+
+  <basic-sequence id="sequence" effect="slide" selected="{{selected}}">
+    <content></content>
+  </basic-sequence>
+
+  <core-selector selected="{{selected}}">
+    <template repeat="{{$.sequence.items}}">
+      <button></button>
+    </template>
+  </core-selector>
+
+</template>
+
+</polymer-element>

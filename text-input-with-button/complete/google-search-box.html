@@ -1,0 +1,20 @@
+<link rel="import" href="text-input-with-button.html">
+
+<polymer-element name="google-search-box" extends="text-input-with-button">
+
+<script>
+Polymer({
+
+  go: function() {
+    window.location = "http://google.com/search?q=" + this.value;
+  },
+
+  ready: function() {
+    this.super();
+    this.textContent = "Search";
+  }
+
+});
+</script>
+
+</polymer-element>

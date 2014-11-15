@@ -1,0 +1,56 @@
+<!--
+A slide (usually an image) with a superimposed caption
+-->
+
+<link rel="import" href="../components/polymer/polymer.html">
+
+<polymer-element name="hero-slide" noscript>
+<template>
+  <style>
+  figure {
+    margin: 0;
+    position: relative;
+  }
+
+  ::content img {
+    display: block;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  ::content figcaption {
+    color: rgb( 63, 63, 63 );
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 50px;
+    font-weight: 200;
+    letter-spacing: -0.065em;
+    line-height: 50px;
+    opacity: 1;
+    padding: 30px;
+    position: absolute;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    transition: opacity 0.6s;
+    transition: -webkit-transform 0.8s;
+    transition: transform 0.8s;
+    top: 0;
+  }
+
+  :host(.offStage) ::content figcaption {
+    opacity: 0;
+  }
+  :host(.offStagePrevious) ::content figcaption {
+    -webkit-transform: translateX( -50px );
+    transform: translateX( -50px);
+  }
+  :host(.offStageNext) ::content figcaption {
+    -webkit-transform: translateX( 50px );
+    transform: translateX( 50px );
+  }
+  </style>
+  <figure>
+    <content select="figcaption"></content>
+    <content></content>
+  </figure>
+</template>
+</polymer-element>

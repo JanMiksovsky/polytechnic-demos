@@ -1,0 +1,31 @@
+{
+  "name": "basic-carousel",
+  "description": "Lets user navigate previous/next through a sequence of child elements",
+  "license": "MIT",
+  "main": "basic-carousel.html",
+  "dependencies": {
+    "basic-sequence": "basic-web-components/basic-sequence#master",
+    "core-icons": "Polymer/core-icons#master",
+    "polymer": "Polymer/polymer#master"
+  },
+  "devDependencies": {
+    "basic-framed-content": "basic-web-components/basic-framed-content#master"
+  },
+  "keywords": [
+    "basic-web-components",
+    "web-components"
+  ],
+  "ignore": [
+    "**/.*"
+  ],
+  "homepage": "https://github.com/basic-web-components/basic-carousel",
+  "_release": "cff8be969d",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "cff8be969dcfcd2b4703c5847cc2a3c5bd3809d6"
+  },
+  "_source": "git://github.com/basic-web-components/basic-carousel.git",
+  "_target": "master",
+  "_originalSource": "basic-web-components/basic-carousel"
+}

@@ -1,0 +1,33 @@
+basic-carousel::shadow #sequenceNavigationContainer {
+  position: relative;
+}
+
+basic-carousel::shadow .navigationButton {
+  position: absolute;
+  height: 100%;
+  color: white;
+  padding: 30px;
+  opacity: 1;
+  transition: opacity 0.5s;
+  z-index: 2;
+}
+basic-carousel::shadow .navigationButton:hover {
+  background: transparent !important;
+}
+basic-carousel::shadow .navigationButton[disabled] {
+  opacity: 0;
+}
+
+basic-carousel::shadow .navigationButton core-icon {
+  background: rgba( 0, 0, 0, 0.6 );
+  border-radius: 30px;
+  height: 60px;
+  width: 60px;
+}
+
+basic-carousel::shadow #buttonPrevious {
+  left: 0;
+}
+basic-carousel::shadow #buttonNext {
+  right: 0;
+}
